@@ -1,54 +1,12 @@
 <template>
-    <div class="min-h-screen bg-white text-black">
-        <!-- Mobile Header -->
-        <header class="lg:hidden bg-white border p-4 flex items-center justify-between">
-            <button class="text-gray-400 hover:text-white text-2xl">&larr;</button>
-            <div class="flex items-center">
-                <span class=" font-semibold">Furrysafe</span>
-            </div>
-            <button @click="toggleSidebar" class="text-gray-400 hover:text-white text-2xl">&#9776;</button>
-        </header>
 
-        <div class="flex flex-col lg:flex-row h-[calc(100vh-64px)] lg:h-screen">
-            <!-- Sidebar -->
-            <div :class="['w-full lg:w-80   p-4 overflow-y-auto', { 'hidden lg:block': !sidebarOpen }]">
-                <!-- Search Bar -->
-                <div class="relative mb-6">
-                    <input type="text" placeholder="Search..."
-                        class="w-full bg-white border-2 rounded-md py-2 pl-4 pr-10 focus:outline-none focus:ring-1 focus:ring-gray-700" />
-                    <span class="absolute right-3 top-2.5 text-gray-500">&#128269;</span>
-                </div>
 
-                <!-- Filters -->
-                <div class="flex flex-wrap items-center gap-2 mb-6">
-                    <div class="text-sm text-gray-400 w-full lg:w-auto mb-2 lg:mb-0">Show me:</div>
-                    <button class=" bg-white border-2  px-3 py-1.5 rounded-md text-sm flex items-center">Open Now <span
-                            class="ml-1">&#9662;</span></button>
-                    <button class=" bg-white border-2 px-3 py-1.5 rounded-md text-sm">Nearest</button>
-                    <button class=" bg-white border-2  px-3 py-1.5 rounded-md text-sm flex items-center"><span
-                            class="mr-1">&#9881;</span>Filters</button>
-                </div>
-
-                <!-- Store List -->
-                <div class="space-y-4">
-                    <div v-for="store in stores" :key="store.id" class="flex items-center justify-between group">
-                        <div class="flex items-center">
-                            <img :src="store.logo" :alt="store.name" class="w-8 h-8 rounded-full" />
-                            <div class="ml-3">
-                                <div class="font-medium">{{ store.name }}</div>
-                                <div class="text-sm text-gray-400">{{ store.distance }} • Open 'til 6pm</div>
-                            </div>
-                        </div>
-                        <button
-                            class="text-gray-500 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">&#8942;</button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="flex flex-col p-4 lg:p-[3rem] lg:flex-row h-[calc(100vh-64px)] lg:h-screen ">
+            
             <!-- Map Area -->
             <div class=" flex-1 relative">
                 <div class="w-full h-full bg-white flex items-center justify-center">
-                    <displayMap 
+                    <displayMap class=" rounded-2xl"
                         :shelterlat="stores.length > 0 ? stores[0].latitude : 0" 
                         :shelterlng="stores.length > 0 ? stores[0].longitude : 0" 
                         containerHeight="100%" 
@@ -73,7 +31,6 @@
           </div> -->
             </div>
         </div>
-    </div>
 </template>
 
 <script>
