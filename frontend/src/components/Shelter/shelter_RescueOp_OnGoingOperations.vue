@@ -55,6 +55,7 @@ onMounted(async () => {
 </script>
 
 <template>
+    
     <div>
         <div v-for="(report, index) in posts" :key="report.post_id"
             class="bg-white border border-gray-200 shadow-md shadow-gray-100 rounded-lg mb-4">
@@ -96,6 +97,7 @@ onMounted(async () => {
                 <span class="flex gap-10 text-sm">Location:
                     <p class="font-semibold text-sm">{{ report.report_address_location }}</p>
                 </span>
+                
 
             </div>
             <div>

@@ -48,12 +48,12 @@
             <!-- Map Area -->
             <div class=" flex-1 relative">
                 <div class="w-full h-full bg-white flex items-center justify-center">
-
-
-                    <iframe class="absolute rounded-[3rem]  border-4 border-black p-2 top-0 left-0 w-full h-full"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
-                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-                    </iframe>
+                    <displayMap 
+                        :shelterlat="stores.length > 0 ? stores[0].latitude : 0" 
+                        :shelterlng="stores.length > 0 ? stores[0].longitude : 0" 
+                        containerHeight="100%" 
+                        containerWidth="100%" 
+                        @location-changed="handleLocationChange" />
                 </div>
                 <!-- Store Details Popup -->
                 <!-- <div
@@ -77,6 +77,8 @@
 </template>
 
 <script>
+import displayMap from '@/components/buddy_Map.vue'
+
 export default {
     name: 'ExploreView',
     // Your existing component logic

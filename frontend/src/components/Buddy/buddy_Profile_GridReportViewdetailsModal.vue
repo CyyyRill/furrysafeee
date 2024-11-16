@@ -218,7 +218,7 @@ const open = ref(true)
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col text-left mx-8 my-4 xl:my-8 sm:text-sm md:text-base">
+                                        <div class=" flex flex-col text-left mx-8 my-4 xl:my-8 sm:text-sm md:text-base">
 
                                             <div class="flex justify-center border-b pb-8">
                                                 <dd class="flex flex-col justify-center gap-x-3">
@@ -279,18 +279,12 @@ const open = ref(true)
                                                         </div>
 
                                                     </dl>
-                                                </div>
+                                                </div>        
                                             </div>
-                                            <!-- <div class="flex justify-center sm:mt-4 xl:mt-8">
-                                                <dd class="flex flex-col justify-center gap-y-1">
-                                                    <p class="max-w-2xl text-sm leading-6 text-gray-500">Report Status
-                                                    </p>
-                                                    <span
-                                                        class="text-[12px] font-medium leading-6 text-gray-900 bg-green-50 py-1 px-4 rounded-2xl w-fit">{{
-                                                            viewpostdetials.reportstatus }}</span>
-                                                </dd>
-                                            </div> -->
-
+                                            <div class=" flex justify-center sm:mt-4 xl:ml-1 ">
+                                                    <button class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                                                        Found</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import statusbuttons from '@/components/Shelter/shelter_RescueOp_OnGoingOperations_Button.vue';
+import statusbuttons from '@/components/Shelter/shelter_Missingreports_Button.vue';
 import previewhover from '@/components/Shelter/shelter_HoverName.vue';
 import axios from "axios";
 
@@ -34,7 +34,7 @@ let _shelter_id = localStorage.getItem('c_id')
 async function retrieveReports() {
     try {
         console.log("retrieveReports")
-        const response = await axios.post("http://localhost:5000/getongoingoperations", {
+        const response = await axios.post("", { //wala ko kabalo diri
             _shelter_id: _shelter_id,
             _status: 'Pending'
         });
@@ -103,6 +103,7 @@ onMounted(async () => {
             </div>
         </div>
     </div>
+    
 </template>
 
 <!-- 
